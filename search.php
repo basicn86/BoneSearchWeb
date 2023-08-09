@@ -12,7 +12,7 @@
     <header>
         <div class="search-bar">
             <h1>bonesear<span class="tld">.ch</span></h1>
-            <form action="#" method="get">
+            <form action="./search.php" method="get">
                 <input type="text" id="query" name="query" placeholder="Search here">
                 <input type="submit" id="submit" value="Search">
             </form>
@@ -21,8 +21,8 @@
 
     <main>
         <?php
-            function GetSearchResults(){
-                $url = 'http://localhost:5000/search?terms=religion%20books';
+            function GetSearchResults($terms){
+                $url = 'http://localhost:5000/search?terms=' . $terms;
             
                 $ch = curl_init($url);
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -35,17 +35,19 @@
                 return $response;
             }
 
-            $json = GetSearchResults();
-            $json = json_decode($json);
+            if(isset($_GET["query"])){
 
-            foreach($json as $j){
-                echo '<div class="search-result">';
-                echo '<span class="search-result-title"><a href="#">' . $j->title . '</a></span>';
-                echo '<br>';
-                echo '<p class="search-result-website"><a href="#">' . $j->url . '</a></p>';
-                echo '</div>';
+                $json = GetSearchResults($_GET["query"]);
+                $json = json_decode($json);
+
+                foreach($json as $j){
+                    echo '<div class="search-result">';
+                    echo '<span class="search-result-title"><a href="#">' . $j->title . '</a></span>';
+                    echo '<br>';
+                    echo '<p class="search-result-website"><a href="#">' . $j->url . '</a></p>';
+                    echo '</div>';
+                }
             }
-
         ?>
 
         <div class="search-result">
