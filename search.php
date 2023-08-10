@@ -38,7 +38,7 @@
 
             if(isset($_GET["query"])){
 
-                $json = GetSearchResults($_GET["query"]);
+                $json = GetSearchResults(rawurlencode($_GET["query"]));
                 $json = json_decode($json);
 
                 if(count($json) == 0){
