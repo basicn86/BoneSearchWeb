@@ -23,7 +23,7 @@
     <main>
         <?php
             function GetSearchResults($terms){
-                $url = 'http://localhost:5222/search?terms=' . $terms;
+                $url = 'http://localhost:5000/search?terms=' . $terms;
             
                 $ch = curl_init($url);
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
