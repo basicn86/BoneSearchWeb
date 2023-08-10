@@ -22,7 +22,7 @@
     <main>
         <?php
             function GetSearchResults($terms){
-                $url = 'http://localhost:5000/search?terms=' . $terms;
+                $url = 'http://localhost:5222/search?terms=' . $terms;
             
                 $ch = curl_init($url);
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -41,19 +41,31 @@
                 $json = json_decode($json);
 
                 foreach($json as $j){
+                    $title = $j->title;
+                    $url = $j->domain . '/' . $j->path;
+                    $protocol = '';
+
+                    if($j->https){
+                        $protocol="https://";
+                    } else {
+                        $protocol="http://";
+                    }
+                    
                     echo '<div class="search-result">';
-                    echo '<span class="search-result-title"><a href="#">' . $j->title . '</a></span>';
+                    echo '<span class="search-result-title"><a href="#">' . $title . '</a></span>';
                     echo '<br>';
-                    echo '<p class="search-result-website"><a href="#">' . $j->url . '</a></p>';
+                    echo '<p class="search-result-website"><a href="' . $protocol . $url . '">' . $url . '</a></p>';
                     echo '</div>';
                 }
             }
         ?>
 
         <div class="search-result">
-            <span class="search-result-title"><a href="#">This is an example result.</a></span>
+            <a href="#"><div>
+            <span class="search-result-title">This is an example result.</span>
             <br>
-            <p class="search-result-website"><a href="#" title="www.example.com/verylongurl/verylongurl/verylongurl/verylongurl/verylongurl/verylongurl/verylongurl/verylongurl/">www.example.com/verylongurl/verylongurl/verylongurl/verylongurl/verylongurl/verylongurl/verylongurl/verylongurl/</a></p>
+            <p class="search-result-website">www.example.com/verylongurl/verylongurl/verylongurl/verylongurl/verylongurl/verylongurl/verylongurl/verylongurl/</p>
+            </div></a>
             <p class="search-result-meta">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur blanditiis incidunt culpa nesciunt libero reiciendis ipsa repellendus possimus beatae. Voluptate soluta alias reiciendis quos quasi pariatur veritatis dolor hic provident?</p>
         </div>
     </main>
