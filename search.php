@@ -40,6 +40,10 @@
                 $json = GetSearchResults($_GET["query"]);
                 $json = json_decode($json);
 
+                if(count($json) == 0){
+                    echo '<h2 class="no-result">No results found</h2>';
+                }
+
                 foreach($json as $j){
                     $title = $j->title;
                     $url = $j->domain . '/' . $j->path;
@@ -52,22 +56,27 @@
                     }
                     
                     echo '<div class="search-result">';
-                    echo '<span class="search-result-title"><a href="#">' . $title . '</a></span>';
+                    echo '<a href="' . $protocol . $url .'"><div>';
+                    echo '<span class="search-result-title">' . $title . "</span>";
                     echo '<br>';
-                    echo '<p class="search-result-website"><a href="' . $protocol . $url . '">' . $url . '</a></p>';
+                    echo '<p class="search-result-website">' . $url . "</p>";
+                    echo '</div></a>';
                     echo '</div>';
                 }
             }
         ?>
 
+        <?php
+        /* EXAMPLE SEARCH RESULT
         <div class="search-result">
             <a href="#"><div>
-            <span class="search-result-title">This is an example result.</span>
-            <br>
-            <p class="search-result-website">www.example.com/verylongurl/verylongurl/verylongurl/verylongurl/verylongurl/verylongurl/verylongurl/verylongurl/</p>
+                <span class="search-result-title">This is an example result.</span>
+                <br>
+                <p class="search-result-website">www.example.com/verylongurl/verylongurl/verylongurl/verylongurl/verylongurl/verylongurl/verylongurl/verylongurl/</p>
             </div></a>
             <p class="search-result-meta">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur blanditiis incidunt culpa nesciunt libero reiciendis ipsa repellendus possimus beatae. Voluptate soluta alias reiciendis quos quasi pariatur veritatis dolor hic provident?</p>
-        </div>
+        </div>*/
+        ?>
     </main>
 </body>
 </html>
