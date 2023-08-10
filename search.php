@@ -1,4 +1,4 @@
-<?php header('Cache-Control: max-age=300'); ?>
+<?php header('Cache-Control: no-cache'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
