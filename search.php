@@ -14,7 +14,7 @@
         <div class="search-bar">
             <h1>bonesear<span class="tld">.ch</span></h1>
             <form action="./search.php" method="get">
-                <input type="text" id="query" name="query" placeholder="Search here">
+                <input type="text" id="query" name="query" placeholder="Search here" value="<?php if(isset($_GET['query'])) echo $_GET['query']; ?>">
                 <input type="submit" id="submit" value="Search">
             </form>
         </div>
