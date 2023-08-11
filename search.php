@@ -47,6 +47,7 @@
 
                 foreach($json as $j){
                     $title = $j->title;
+                    $metadesc = $j->metadesc;
                     $url = $j->domain . '/' . $j->path;
                     $protocol = '';
 
@@ -62,6 +63,7 @@
                     echo '<br>';
                     echo '<p class="search-result-website">' . $url . "</p>";
                     echo '</div></a>';
+                    echo '<p class="search-result-meta">' . $metadesc . '</p>';
                     echo '</div>';
                 }
             }
