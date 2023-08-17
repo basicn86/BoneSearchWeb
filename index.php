@@ -8,6 +8,8 @@
     <link href="index.css" rel="stylesheet">
 
     <title>bonesear.ch</title>
+
+    <?php include("gtag.include"); ?>
 </head>
 <body>
     
