@@ -112,6 +112,8 @@ h1 {
     padding: 6px 6px 6px 6px;
     width: fit-content;
     height: fit-content;
+
+    margin-left: auto;
 }
 
 .upvote{

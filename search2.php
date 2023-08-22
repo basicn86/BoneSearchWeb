@@ -61,7 +61,7 @@
                     
                     echo '<div class="left-nav">
                     <div class="upvote"><a href="#">&#9650;</a></div>
-                    <div class="score">&quest;</div>
+                    <div class="score">score</div>
                     <div class="downvote"><a href="#">&#9660;</a></div>
                     <div class="category">' . $category . '</div>
                     </div>';
