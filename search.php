@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="search2.css" rel="stylesheet">
+    <link href="search.css" rel="stylesheet">
 
     <title>bonesear.ch</title>
 </head>
