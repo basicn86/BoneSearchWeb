@@ -23,21 +23,60 @@
     <main>
         <div class="grid-container">
         <?php
-            for($i = 0; $i < 10; $i++){
-            echo '<div class="left-nav">
-            <p class="score">10.0</p>
-            <div style="clear: both; height: 4px;"></div>
-            <p class="category">Category</p>
-            </div>';
-            echo '<div class="search-result">';
-            echo '<a href="#"><div>';
-            echo '<span class="search-result-title">example title</span>';
-            echo '<br>';
-            echo '<p class="search-result-website">example.com/url</p>';
-            echo '</div></a>';
-            echo '<p class="search-result-meta">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat quis, officiis incidunt aliquid laudantium doloremque doloribus dignissimos alias pariatur voluptates!</p>';
-            echo '</div>';
-            echo '<div></div>';
+            function GetSearchResults($terms){
+                $url = 'http://localhost:5000/search?terms=' . $terms;
+            
+                $ch = curl_init($url);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                $response = curl_exec($ch);
+                
+                curl_close($ch);
+
+                if($response === false) return null;
+
+                return $response;
+            }
+
+            if(isset($_GET["query"])){
+
+                $json = GetSearchResults(rawurlencode($_GET["query"]));
+                $json = json_decode($json);
+
+                if(count($json) == 0){
+                    echo '<h2 class="no-result">No results found</h2>';
+                }
+
+                foreach($json as $j){
+                    $title = $j->title;
+                    $metadesc = $j->metadesc;
+                    $url = $j->domain . '/' . $j->path;
+                    $protocol = '';
+                    $category = $j->category;
+
+                    if($j->https){
+                        $protocol="https://";
+                    } else {
+                        $protocol="http://";
+                    }
+                    
+                    echo '<div class="left-nav">
+                    <p class="vote"><a href="#">&#9650;</a></p>
+                    <p class="vote"><a href="#">&#9660;</a></p>
+                    <p class="score">&quest;</p>
+                    <div style="clear: both; height: 4px;"></div>
+                    <p class="category">' . $category . '</p>
+                    </div>';
+                    echo '<div class="search-result">';
+                    echo '<a href="' . $protocol . $url .'"><div>';
+                    echo '<span class="search-result-title">' . $title . "</span>";
+                    echo '<br>';
+                    echo '<p class="search-result-website">' . $url . "</p>";
+                    echo '</div></a>';
+                    echo '<p class="search-result-meta">' . $metadesc . '</p>';
+                    echo '</div>';
+
+                    echo '<div></div>';
+                }
             }
         ?>
         </div>

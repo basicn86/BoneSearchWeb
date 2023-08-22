@@ -78,7 +78,7 @@ h1 {
 
     row-gap: 12px;
     
-    align-items: center;
+    
 }
 
 .left-nav{
@@ -90,21 +90,29 @@ h1 {
 }
 
 .score{
+    /*
     border: 1px solid white;
     border-radius: 6px;
     padding: 6px 6px 6px 6px;
     width: fit-content;
 
     float: right;
+
+    margin-top: 6px;*/
 }
 
 .category{
+    /*
     border: 1px solid white;
     border-radius: 6px;
     padding: 6px 6px 6px 6px;
     width: fit-content;
 
-    float: right;
+    float: right;*/
+}
+
+.vote{
+    
 }
 
 .no-result{
