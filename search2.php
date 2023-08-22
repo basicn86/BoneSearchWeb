@@ -13,7 +13,7 @@
     <header>
         <div class="search-bar">
             <h1>bonesear<span class="tld">.ch</span></h1>
-            <form action="./search.php" method="get">
+            <form action="./search2.php" method="get">
                 <input type="text" id="query" name="query" placeholder="Search here" value="<?php if(isset($_GET['query'])) echo $_GET['query']; ?>">
                 <input type="submit" id="submit" value="Search">
             </form>
@@ -60,11 +60,10 @@
                     }
                     
                     echo '<div class="left-nav">
-                    <p class="vote"><a href="#">&#9650;</a></p>
-                    <p class="vote"><a href="#">&#9660;</a></p>
-                    <p class="score">&quest;</p>
-                    <div style="clear: both; height: 4px;"></div>
-                    <p class="category">' . $category . '</p>
+                    <div class="upvote"><a href="#">&#9650;</a></div>
+                    <div class="score">&quest;</div>
+                    <div class="downvote"><a href="#">&#9660;</a></div>
+                    <div class="category">' . $category . '</div>
                     </div>';
                     echo '<div class="search-result">';
                     echo '<a href="' . $protocol . $url .'"><div>';
