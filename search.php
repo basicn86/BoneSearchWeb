@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="search.css" rel="stylesheet">
+    <link href="search2.css" rel="stylesheet">
 
     <title>bonesear.ch</title>
 </head>
@@ -21,6 +21,7 @@
     </header>
 
     <main>
+        <div class="grid-container">
         <?php
             function GetSearchResults($terms){
                 $url = 'http://localhost:5000/search?terms=' . $terms;
@@ -50,6 +51,7 @@
                     $metadesc = $j->metadesc;
                     $url = $j->domain . '/' . $j->path;
                     $protocol = '';
+                    $category = $j->category;
 
                     if($j->https){
                         $protocol="https://";
@@ -57,6 +59,12 @@
                         $protocol="http://";
                     }
                     
+                    echo '<div class="left-nav">
+                    <div class="upvote"><a href="#">&#9650;</a></div>
+                    <div class="score">score</div>
+                    <div class="downvote"><a href="#">&#9660;</a></div>
+                    <div class="category">' . $category . '</div>
+                    </div>';
                     echo '<div class="search-result">';
                     echo '<a href="' . $protocol . $url .'"><div>';
                     echo '<span class="search-result-title">' . $title . "</span>";
@@ -65,9 +73,12 @@
                     echo '</div></a>';
                     echo '<p class="search-result-meta">' . $metadesc . '</p>';
                     echo '</div>';
+
+                    echo '<div></div>';
                 }
             }
         ?>
+        </div>
 
         <?php
         /* EXAMPLE SEARCH RESULT
