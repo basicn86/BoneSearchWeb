@@ -13,6 +13,7 @@
     <header>
         <div class="search-bar">
             <h1>bonesear<span class="tld">.ch</span></h1>
+            <span class="version">Public Beta 2.0</span>
             <form action="./search.php" method="get">
                 <input type="text" id="query" name="query" placeholder="Search here" value="<?php if(isset($_GET['query'])) echo $_GET['query']; ?>">
                 <input type="submit" id="submit" value="Search">
@@ -21,6 +22,7 @@
     </header>
 
     <main>
+        <div class="grid-container">
         <?php
             function GetSearchResults($terms){
                 $url = 'http://localhost:5000/search?terms=' . $terms;
@@ -50,6 +52,7 @@
                     $metadesc = $j->metadesc;
                     $url = $j->domain . '/' . $j->path;
                     $protocol = '';
+                    $category = $j->category;
 
                     if($j->https){
                         $protocol="https://";
@@ -57,6 +60,12 @@
                         $protocol="http://";
                     }
                     
+                    echo '<div class="left-nav">
+                    <div class="upvote"><a href="#">&#9650;</a></div>
+                    <div class="score">score</div>
+                    <div class="downvote"><a href="#">&#9660;</a></div>
+                    <div class="category">' . $category . '</div>
+                    </div>';
                     echo '<div class="search-result">';
                     echo '<a href="' . $protocol . $url .'"><div>';
                     echo '<span class="search-result-title">' . $title . "</span>";
@@ -65,9 +74,12 @@
                     echo '</div></a>';
                     echo '<p class="search-result-meta">' . $metadesc . '</p>';
                     echo '</div>';
+
+                    echo '<div></div>';
                 }
             }
         ?>
+        </div>
 
         <?php
         /* EXAMPLE SEARCH RESULT

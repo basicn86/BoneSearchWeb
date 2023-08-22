@@ -20,7 +20,6 @@ body {
 
 h1 {
     color: white;
-    margin-bottom: 12px;
     font-size: 3em;
 }
 
@@ -67,9 +66,89 @@ h1 {
     border: 1px solid white;
     border-radius: 8px;
 }
+
+.version{
+    font-style: italic;
+    color: white;
+    margin-bottom: 12px;
+}
 /*End header*/
 
 /*Begin main content*/
+.grid-container{
+    display: grid;
+    grid-template-columns: 150px 1fr 150px;
+    max-width: fit-content;
+    margin: auto;
+
+    row-gap: 12px;
+}
+
+.left-nav{
+    height: fit-content;
+
+    display: grid;
+    grid-template-columns: auto auto;
+    
+    gap: 6px 16px;
+    
+    margin-right: 12px;
+    margin-top: auto;
+    margin-bottom: auto;
+    color: white;
+
+    justify-content: right;
+}
+
+.score{
+    border: 1px solid white;
+    border-radius: 6px;
+    padding: 6px 6px 6px 6px;
+    margin-left: auto;
+
+    width: fit-content;
+    height: fit-content;
+
+}
+
+.category{
+    border: 1px solid white;
+    border-radius: 6px;
+    padding: 6px 6px 6px 6px;
+    width: fit-content;
+    height: fit-content;
+
+    margin-left: auto;
+}
+
+.upvote{
+    border: 1px solid lime;
+    border-radius: 6px;
+    padding: 6px 6px 6px 6px;
+
+    width: fit-content;
+    height: fit-content;
+}
+
+.downvote{
+    border: 1px solid orange;
+    border-radius: 6px;
+    padding: 6px 6px 6px 6px;
+
+    width: fit-content;
+    height: fit-content;
+}
+
+.upvote a {
+    text-decoration: none;
+    color: lime;
+}
+
+.downvote a {
+    text-decoration: none;
+    color: orange
+}
+
 .no-result{
     color: white;
     text-align: center;
@@ -79,8 +158,7 @@ h1 {
     width: 500px;
     max-width: 100vw;
 
-    margin: auto;
-    margin-bottom: 12px;
+    margin-bottom: auto;
 }
 
 .search-result a{
