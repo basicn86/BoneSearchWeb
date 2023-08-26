@@ -66,7 +66,7 @@
                             <div class="downvote"><a href="#">&#9660;</a></div>
                         </div>
                         <div class="left-nav-right-column">
-                            <div class="score">score</div>
+                            <div class="score">100</div>
                         </div>
                     </div>';
                     echo '<div class="search-result">';

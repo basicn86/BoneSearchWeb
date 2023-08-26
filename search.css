@@ -88,28 +88,28 @@ h1 {
     height: fit-content;
 
     display: grid;
-    grid-template-columns: auto auto;
-    
-    gap: 6px 16px;
+    grid-template-columns: 1fr 40px;
+    grid-template-rows: 1 2fr;
+    align-items: center;
+
+    gap: 6px 12px;
     
     margin-right: 12px;
     margin-top: auto;
     margin-bottom: auto;
     color: white;
 
-    justify-content: right;
+    justify-items: right;
 }
 
 .left-nav-right-column{
-    display: flex;
-    align-items: center;
+    margin: auto;
 }
 
 .score{
     border: 1px solid white;
     border-radius: 6px;
     padding: 6px 6px 6px 6px;
-    margin-left: auto;
 
     width: fit-content;
     height: fit-content;
@@ -131,6 +131,8 @@ h1 {
     border: 1px solid lime;
     border-radius: 6px;
     padding: 6px 6px 6px 6px;
+
+    margin-bottom: 6px;
 
     width: fit-content;
     height: fit-content;
