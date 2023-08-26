@@ -61,10 +61,13 @@
                     }
                     
                     echo '<div class="left-nav">
-                    <div class="upvote"><a href="#">&#9650;</a></div>
-                    <div class="score">score</div>
-                    <div class="downvote"><a href="#">&#9660;</a></div>
-                    <div class="category">' . $category . '</div>
+                        <div class="left-nav-left-column">
+                            <div class="upvote"><a href="#">&#9650;</a></div>
+                            <div class="downvote"><a href="#">&#9660;</a></div>
+                        </div>
+                        <div class="left-nav-right-column">
+                            <div class="score">score</div>
+                        </div>
                     </div>';
                     echo '<div class="search-result">';
                     echo '<a href="' . $protocol . $url .'"><div>';
@@ -75,7 +78,9 @@
                     echo '<p class="search-result-meta">' . $metadesc . '</p>';
                     echo '</div>';
 
-                    echo '<div></div>';
+                    echo '<div class="right-nav">
+                    <div class="category">' . $category . '</div>
+                    </div>';
                 }
             }
         ?>
