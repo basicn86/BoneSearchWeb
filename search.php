@@ -22,7 +22,6 @@
     </header>
 
     <main>
-        <div class="grid-container">
         <?php
             function GetSearchResults($terms){
                 $url = 'http://localhost:5000/search?terms=' . $terms;
@@ -30,22 +29,29 @@
                 $ch = curl_init($url);
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
                 $response = curl_exec($ch);
-                
+                $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
                 curl_close($ch);
 
                 if($response === false) return null;
 
+                if($httpCode !== 200) return null;
+
                 return $response;
             }
 
-            if(isset($_GET["query"])){
-
-                $json = GetSearchResults(rawurlencode($_GET["query"]));
-                $json = json_decode($json);
+            function PrintResultsToScreen($json){
+                if($json == null){
+                    echo '<h2 class="no-result">No results found</h2>';
+                    return;
+                }
 
                 if(count($json) == 0){
                     echo '<h2 class="no-result">No results found</h2>';
+                    return;
                 }
+
+                //print out grid container
+                echo '<div class="grid-container">';
 
                 foreach($json as $j){
                     $title = $j->title;
@@ -81,10 +87,26 @@
                     <div class="category">' . $category . '</div>
                     </div>';
                 }
+
+                //print out ending div for the grid container
+                echo '</div>';
+            }
+
+            if(isset($_GET["query"])){
+
+                try{
+                    $json = GetSearchResults(rawurlencode($_GET["query"]));
+                    $json = json_decode($json);
+
+                    PrintResultsToScreen($json);
+
+                } catch(Exception $e){
+                    //echo '<h2 class="no-result">No results found</h2>';
+                }
             }
         ?>
         </div>
-
+            
         <?php
         /* EXAMPLE SEARCH RESULT
         <div class="search-result">
