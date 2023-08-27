@@ -60,15 +60,14 @@
                         $protocol="http://";
                     }
                     
-                    echo '<div class="left-nav">
+                    echo '
                         <div class="left-nav-left-column">
                             <div class="upvote"><a href="#">&#9650;</a></div>
                             <div class="downvote"><a href="#">&#9660;</a></div>
                         </div>
                         <div class="left-nav-right-column">
                             <div class="score">100</div>
-                        </div>
-                    </div>';
+                        </div>';
                     echo '<div class="search-result">';
                     echo '<a href="' . $protocol . $url .'"><div>';
                     echo '<span class="search-result-title">' . $title . "</span>";

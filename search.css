@@ -77,7 +77,7 @@ h1 {
 /*Begin main content*/
 .grid-container{
     display: grid;
-    grid-template-columns: 150px 1fr 150px;
+    grid-template-columns: 80px 70px 1fr 150px;
     max-width: fit-content;
     margin: auto;
 
@@ -102,12 +102,22 @@ h1 {
     justify-items: right;
 }
 
+.left-nav-left-column{
+    justify-self: right;
+    align-self: center;
+}
+
 .left-nav-right-column{
     margin: auto;
 }
 
+.right-nav{
+    align-self: center;
+}
+
 .score{
     border: 1px solid white;
+    color: white;
     border-radius: 6px;
     padding: 6px 6px 6px 6px;
 
@@ -124,6 +134,7 @@ h1 {
     width: fit-content;
     height: fit-content;
 
+    margin-left: 12px;
     margin-right: auto;
 }
 
