@@ -28,7 +28,7 @@
 
     <main>
         <h1>bonesear<span class="tld">.ch</span></h1>
-        <span class="version">Public Beta 2.1</span>
+        <span class="version">Public Beta 3.0</span>
         <form action="./search.php" method="get">
             <input type="text" id="query" name="query" placeholder="Search here">
             <input type="submit" id="submit" value="Search">
