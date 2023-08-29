@@ -136,6 +136,20 @@ h1 {
 
     margin-left: 12px;
     margin-right: auto;
+    margin-bottom: 6px;
+}
+
+.date{
+    color: white;
+
+    border: 1px solid white;
+    border-radius: 6px;
+    padding: 6px 6px 6px 6px;
+    width: fit-content;
+    height: fit-content;
+
+    margin-left: 12px;
+    margin-right: auto;
 }
 
 .upvote{
