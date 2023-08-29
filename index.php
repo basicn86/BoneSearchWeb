@@ -14,7 +14,17 @@
     <?php include("gtag.include"); ?>
 </head>
 <body>
-    
+    <header>
+        <nav class="top-nav">
+            <ul class="top-nav-ul">
+                <li><a href="#">Placeholder</a></li>
+                <li><a href="#">Placeholder</a></li>
+                <li><a href="#">Placeholder</a></li>
+                <li><a href="#">Login</a></li>
+            </ul>
+        </nav>
+    </header>    
+
     <main>
         <h1>bonesear<span class="tld">.ch</span></h1>
         <span class="version">Public Beta 2.1</span>
