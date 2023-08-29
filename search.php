@@ -59,6 +59,7 @@
                     $url = $j->domain . '/' . $j->path;
                     $protocol = '';
                     $category = $j->category;
+                    $date = $j->date;
 
                     if($j->https){
                         $protocol="https://";
@@ -83,9 +84,12 @@
                     echo '<p class="search-result-meta">' . $metadesc . '</p>';
                     echo '</div>';
 
-                    echo '<div class="right-nav">
-                    <div class="category">' . $category . '</div>
-                    </div>';
+                    echo '<div class="right-nav">';
+                    echo '<div class="category">' . $category . '</div>';
+                    if($date !== null){
+                        echo '<div class="date">' . $date . '</div>';
+                    }
+                    echo '</div>';
                 }
 
                 //print out ending div for the grid container
