@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="index.css" rel="stylesheet">
+    <link href="topnav.css" rel="stylesheet">
 
     <title>bonesear.ch</title>
 
@@ -17,9 +18,9 @@
     <header>
         <nav class="top-nav">
             <ul class="top-nav-ul">
-                <li><a href="#">Placeholder</a></li>
-                <li><a href="#">Placeholder</a></li>
-                <li><a href="#">Placeholder</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">About</a></li>
                 <li><a href="#">Login</a></li>
             </ul>
         </nav>
