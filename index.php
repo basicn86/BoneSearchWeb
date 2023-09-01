@@ -12,7 +12,7 @@
 
     <meta name="description" content="The next generation search engine.">
 
-    <?php include("gtag.include"); ?>
+    <?php include("include/gtag.include"); ?>
 </head>
 <body>
     <header>
