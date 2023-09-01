@@ -12,14 +12,7 @@
 </head>
 <body>
     <header>
-        <nav class="top-nav">
-            <ul class="top-nav-ul">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">News</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Login</a></li>
-            </ul>
-        </nav>
+        <?php include("include/topnav.html"); ?>
     </header>
 
     <main>
