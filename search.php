@@ -5,27 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="search.css" rel="stylesheet">
-    <link href="topnav.css" rel="stylesheet">
+    <link href="styles/search.css" rel="stylesheet">
+    <link href="styles/topnav.css" rel="stylesheet">
 
     <title>bonesear.ch</title>
 </head>
 <body>
     <header>
-        <nav class="top-nav">
-            <ul class="top-nav-ul">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">News</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Login</a></li>
-            </ul>
-        </nav>
+        <?php include("include/topnav.html"); ?>
     </header>
 
     <main>
         <div class="search-bar">
             <h1>bonesear<span class="tld">.ch</span></h1>
-            <span class="version">Public Beta 3.0</span>
+            <span class="version">Public Beta 3.1</span>
             <form action="./search.php" method="get">
                 <input type="text" id="query" name="query" placeholder="Search here" value="<?php if(isset($_GET['query'])) echo $_GET['query']; ?>">
                 <input type="submit" id="submit" value="Search">
