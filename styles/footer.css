@@ -1,0 +1,22 @@
+/*FOOTER STUFF*/
+footer{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    margin-bottom: 12px;
+}
+
+.copyright {
+    font-size: 1.2em;
+    color: white;
+    width: fit-content;
+    margin: auto;
+}
+
+/*Fixed for smaller screens*/
+@media screen and (max-height: 400px) {
+    footer{
+        position: static;
+    }
+}
+/*FOOTER STUFF*/

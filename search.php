@@ -7,6 +7,7 @@
 
     <link href="styles/search.css" rel="stylesheet">
     <link href="styles/topnav.css" rel="stylesheet">
+    <link href="styles/footer.css" rel="stylesheet">
 
     <title>bonesear.ch</title>
 </head>
@@ -112,7 +113,7 @@
                 }
             }
         ?>
-            
+
         <?php
         /* EXAMPLE SEARCH RESULT
         <div class="search-result">
@@ -125,5 +126,8 @@
         </div>*/
         ?>
     </main>
+
+    <?php include("include/footer.html") ?>
+
 </body>
 </html>

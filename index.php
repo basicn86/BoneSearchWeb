@@ -7,6 +7,7 @@
 
     <link href="styles/index.css" rel="stylesheet">
     <link href="styles/topnav.css" rel="stylesheet">
+    <link href="styles/footer.css" rel="stylesheet">
 
     <title>bonesear.ch</title>
 
@@ -28,5 +29,6 @@
         </form>
     </main>
 
+    <?php include("include/footer.html") ?>
 </body>
 </html>
