@@ -31,6 +31,10 @@ p{
     animation: cc 7s linear infinite;
 }
 
+main{
+    margin-bottom: 64px;
+}
+
 @keyframes cc{
     0%{
         color: rgb(255,0,0);

@@ -7,6 +7,7 @@
 
     <link href="styles/search.css" rel="stylesheet">
     <link href="styles/topnav.css" rel="stylesheet">
+    <link href="styles/footer.css" rel="stylesheet">
 
     <title>bonesear.ch</title>
 </head>
@@ -18,7 +19,7 @@
     <main>
         <div class="search-bar">
             <h1>bonesear<span class="tld">.ch</span></h1>
-            <span class="version">Public Beta 3.1</span>
+            <span class="version">Public Beta 3.2</span>
             <form action="./search.php" method="get">
                 <input type="text" id="query" name="query" placeholder="Search here" value="<?php if(isset($_GET['query'])) echo $_GET['query']; ?>">
                 <input type="submit" id="submit" value="Search">
@@ -112,7 +113,7 @@
                 }
             }
         ?>
-            
+
         <?php
         /* EXAMPLE SEARCH RESULT
         <div class="search-result">
@@ -125,5 +126,8 @@
         </div>*/
         ?>
     </main>
+
+    <?php include("include/footer.html") ?>
+
 </body>
 </html>

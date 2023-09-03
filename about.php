@@ -6,6 +6,7 @@
 
     <link href="styles/about.css" rel="stylesheet">
     <link href="styles/topnav.css" rel="stylesheet">
+    <link href="styles/footer.css" rel="stylesheet">
 
     <title>bonesear.ch &VerticalSeparator; About</title>
 
@@ -25,5 +26,7 @@
         <p>Your search, your rules. Bonesearch empowers you to curate your results like never before. Our advanced content filtering feature allows you to refine your searches by excluding specific categories of results that don't align with your interests. Tailor your experience, and let the content that matters most to you shine through.</p>
         <p><b>Bonesearch is currently work in progress</b>, despite this we're committed to continually enhancing your search experience. As we move forward, we have exciting new features in the development pipeline. However, please be aware that, like any other project in development, you may encounter ocassional bugs along the way. Bonesearch is currently in public beta. We appreciate your understanding and patience as we focus on refining and expanding our offerings. Your feedback is invaluable during this phase, helping us shape a search engine that truly meets your needs.</p>
     </main>
+
+    <?php include("include/footer.html") ?>
 </body>
 </html>
