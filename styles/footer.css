@@ -16,6 +16,14 @@ footer{
     margin: auto;
 }
 
+.copyright a{
+    color: white
+}
+
+.copyright a:active{
+    color: cyan;
+}
+
 /*Fixed for smaller screens*/
 @media screen and (max-height: 400px) {
     footer{
